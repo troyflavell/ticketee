@@ -23,6 +23,12 @@ render "edit"
 end
 end
 
+def destroy
+@project = Project.find(params[:id])
+@project.destroy
+flash[:notice] = "Project has been deleted."
+redirect_to projects_path
+end
 
 def new
 	@project = Project.new
