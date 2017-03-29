@@ -2,8 +2,26 @@
 <header>
 <h1><%= @project.name %></h1>
 </header>
+
 <header>
 <h2><%= @ticket.name %></h2>
 </header>
+
+<header>
+<h3>Tickets</h3>
+<ul class="actions">
+<li><%= link_to "New Ticket", new_project_ticket_path(@project),
+class: "new" %></li>
+</ul>
+</header>
+
+<header>
+<h4><%= @ticket.name %></h4>
+<ul class="actions">
+<li><%= link_to "Edit Ticket", [:edit, @project, @ticket],
+class: "edit" %></li>
+</ul>
+</header>
+
 <%= simple_format(@ticket.description) %>
 </div>
